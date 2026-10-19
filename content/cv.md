@@ -21,14 +21,31 @@ Advisors: E.G. Bobich, F.W. Ewers, and K. Bozak
 
 ## Publications
 
-<!-- TODO: add anything published since 2021 (see Google Scholar), and any manuscripts in review or in preparation. -->
+### Peer-reviewed articles
+
+**Ray, D.M.**, A.C. Arthur, J. Baerg, E.W. McKeever and J.A. Savage. 2025. Cambial and phloem reactivation timing in relation to floral phenology in four co-occurring woody species. *Tree Physiology* 45(8): tpaf088. [doi:10.1093/treephys/tpaf088](https://doi.org/10.1093/treephys/tpaf088)
+
 **Ray, D.M.** and J.A. Savage. 2021. Seasonal changes in temperate woody plant phloem anatomy and physiology: Implications for long-distance transport. *AoB PLANTS* 13(4): plab028. [doi:10.1093/aobpla/plab028](https://doi.org/10.1093/aobpla/plab028)
 
-**Ray, D.M.** and J.A. Savage. 2020. Immunodetection of cell wall pectin galactan opens up new avenues for phloem research. *Plant Physiology*. [doi:10.1104/pp.20.00283](https://doi.org/10.1104/pp.20.00283)
+**Ray, D.M.** and J.A. Savage. 2020. Immunodetection of cell wall pectin galactan opens up new avenues for phloem research. *Plant Physiology* 183(4): 1435–1437. [doi:10.1104/pp.20.00283](https://doi.org/10.1104/pp.20.00283)
 
-**Ray, D.M.** and C.S. Jones. 2018. Scaling relationships and vessel packing in petioles. *American Journal of Botany* 105: 1–10. [doi:10.1002/ajb2.1054](https://doi.org/10.1002/ajb2.1054)
+**Ray, D.M.** and C.S. Jones. 2018. Scaling relationships and vessel packing in petioles. *American Journal of Botany* 105(4): 667–676. [doi:10.1002/ajb2.1054](https://doi.org/10.1002/ajb2.1054)
 
-V.Y. Chock, G. Amir, C.R. Davis, C. Ramamoorthy, K.K. Riemer, **D. Ray**, R.G. Giffard and M. Reddy. 2006. Antegrade cerebral perfusion reduces apoptotic neuronal injury in a neonatal piglet model of cardiopulmonary bypass. *Journal of Thoracic and Cardiovascular Surgery* 131: 659–665.
+V.Y. Chock, G. Amir, C.R. Davis, C. Ramamoorthy, K.K. Riemer, **D. Ray**, R.G. Giffard and M. Reddy. 2006. Antegrade cerebral perfusion reduces apoptotic neuronal injury in a neonatal piglet model of cardiopulmonary bypass. *Journal of Thoracic and Cardiovascular Surgery* 131(3): 659–665.
+
+### Book chapters
+
+**Ray, D.M.** and J.M. Losada. 2026. Immunolabeling sieve element cell walls with the LM26 antibody. In: *Phloem: Methods and Protocols*, pp. 31–38.
+
+### Preprints
+
+E.W. Miller, **D. Ray** and J. Savage. 2023. Direct and indirect effects of light on plant growth and conduit diameter in *Populus* seedlings. *Authorea*.
+
+### Datasets
+
+E. McKeever, **D. Ray** and J. Savage. 2026. Plant growth and vascular structure data collected on *Populus tremuloides* seedlings grown under three different light treatments for eight weeks.
+
+**Ray, D.** and J. Savage. 2021. Phloem flow modeling. *Dryad*.
 
 ## Awards, grants and fellowships
 
