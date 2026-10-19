@@ -24,12 +24,11 @@ Edit these under `params` in `config.json`.
 
 | Setting | What it does |
 | --- | --- |
-| `tagline`, `intro` | Heading and paragraph beside the micrograph |
-| `hero.image` | URL of the micrograph (it is cropped to a circle) |
-| `hero.alt` | Alt text for the micrograph. Describe what it shows. |
-| `hero.title`, `hero.detail` | Figure caption. HTML is allowed, so `<i>Lupinus</i>` works. Leave both empty for no caption. |
-| `hero.scale_label`, `hero.scale_percent` | Scale bar, e.g. `"50 µm"` and `20`. The percent is the bar's length as a share of the circle's diameter as displayed, so measure it against the cropped image. Leave either empty to hide the bar. |
-| `research_highlights` | Items under "Current research" on the home page |
+| `tagline`, `intro` | Heading and paragraph beside the petiole diagram |
+| `intro_note` | Smaller line under the intro. Leave empty to hide it. |
+| `research_heading` | Heading for `research_highlights` |
+| `research_highlights` | Research items on the home page. `summary` allows HTML. |
+| `publications` | "Selected publications" on the home page: `year`, `title`, `citation` (HTML allowed), `url` (may be empty) |
 | `main_categories` | Categories that count as main posts (see below) |
 | `notes_intro` | Sentence under the Notes heading |
 | `nav` | Header navigation |

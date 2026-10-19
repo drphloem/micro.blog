@@ -1,57 +1,66 @@
 {{ define "main" }}
 {{- $s := partial "split_posts.html" . -}}
-{{- $hero := .Site.Params.hero -}}
 
 <section class="hero" aria-labelledby="tagline">
     <div class="hero-text">
         <h1 id="tagline">{{ .Site.Params.tagline }}</h1>
         <p class="intro">{{ .Site.Params.intro }}</p>
+        {{- with .Site.Params.intro_note }}
+        <p class="intro-note">{{ . }}</p>
+        {{- end }}
     </div>
 
     <figure class="plate">
         <div class="plate-field">
-            <img src="{{ $hero.image }}" alt="{{ $hero.alt }}" fetchpriority="high">
-            {{- if and $hero.scale_label $hero.scale_percent }}
-            <div class="plate-scale" style="--p: {{ $hero.scale_percent }}"><i></i><span>{{ $hero.scale_label }}</span></div>
-            {{- end }}
+            {{ partial "petiole.html" . }}
         </div>
-        {{- if or $hero.title $hero.detail }}
-        <figcaption>
-            {{- with $hero.title }}<span class="plate-title">{{ . | safeHTML }}</span>{{ end -}}
-            {{- with $hero.detail }}{{ . | safeHTML }}{{ end -}}
+        <figcaption id="petiole-cap">
+            Petiole in transverse section, schematic. Collateral bundles in a ring around a larger medullary bundle,
+            <span class="cap-light">colored as in safranin and astra blue:</span><span class="cap-dark">with</span>
+            <span class="cap-phloem">phloem</span><span class="cap-light"> (blue)</span> facing outward and
+            <span class="cap-xylem">xylem</span><span class="cap-light"> (red)</span><span class="cap-dark"> (grey)</span>
+            facing inward; adaxial groove at top.
         </figcaption>
-        {{- end }}
     </figure>
 </section>
 
 {{ with .Site.Params.research_highlights }}
 <section class="section" aria-labelledby="research-h">
-    <h2 id="research-h">Current research</h2>
+    <div class="section-head">
+        <h2 id="research-h">{{ $.Site.Params.research_heading | default "Research" }}</h2>
+        <a href="{{ "about/" | relURL }}">About the research</a>
+    </div>
     <ul class="highlights">
         {{- range . }}
         <li>
             <a href="{{ .url | relURL }}">{{ .title }}</a>
-            <p>{{ .summary }}</p>
+            <p>{{ .summary | safeHTML }}</p>
         </li>
         {{- end }}
     </ul>
 </section>
 {{ end }}
 
-<section class="section h-feed" aria-labelledby="posts-h">
-    <h2 id="posts-h">Recent posts</h2>
-    {{- with first 6 $s.main }}
-    <ul class="entries">
-        {{- range . }}{{ partial "post_row.html" . }}{{ end }}
+{{ with .Site.Params.publications }}
+<section class="section" aria-labelledby="pubs-h">
+    <div class="section-head">
+        <h2 id="pubs-h">Selected publications</h2>
+        <a href="{{ "cv/" | relURL }}">Full list on CV</a>
+    </div>
+    <ul class="pubs">
+        {{- range . }}
+        <li>
+            <span class="pub-year">{{ .year }}</span>
+            <div>
+                {{ if .url }}<a class="pub-title" href="{{ .url }}">{{ .title }}</a>{{ else }}<span class="pub-title">{{ .title }}</span>{{ end }}
+                <p class="pub-cite">{{ .citation | safeHTML }}</p>
+            </div>
+        </li>
+        {{- end }}
     </ul>
-    <p class="section-more"><a href="{{ "archive/" | relURL }}">All posts</a></p>
-    {{- else }}
-    <p>No posts yet.</p>
-    {{- end }}
-    {{- if $s.notes }}
-    <p class="section-more">Older short posts are in <a href="{{ "notes/" | relURL }}">Notes</a>.</p>
-    {{- end }}
+    <p class="section-more">Posts are in <a href="{{ "archive/" | relURL }}">Writing</a>{{ if $s.notes }}; older short posts are in <a href="{{ "notes/" | relURL }}">Notes</a>{{ end }}.</p>
 </section>
+{{ end }}
 
 {{ partial "microblog_syndication.html" . }}
 {{ end }}

@@ -1,7 +1,8 @@
-# Design mockups (not yet implemented)
+# Design mockups
 
 These files are design changes for the home page, made on a Claude Design canvas.
-They are **mockups only**: nothing in `layouts/` or `config.json` uses them yet.
+They are now implemented in `layouts/index.html`, `layouts/partials/petiole.html`,
+`layouts/partials/theme_css.html` and `config.json`; the files here are kept for reference.
 
 | File | What it is |
 | --- | --- |
@@ -21,9 +22,3 @@ won't render on their own. Open the SVGs directly, or read the HTML for layout a
 - "Current research" renamed "Research, 2019–2025".
 - "Recent posts" replaced by "Selected publications" (five items), with links to Writing and Notes below.
 - Dark mode: near-black green ground, pale text, green link accent, fluorescent-green phloem.
-
-## To implement
-
-- `config.json`: new `intro`, nav, and `research_highlights` heading; drop the `hero.image` micrograph.
-- `layouts/index.html`: inline the petiole SVG with classes so its fills follow the theme; add the publications section.
-- `layouts/partials/theme_css.html`: add a `prefers-color-scheme: dark` block.
