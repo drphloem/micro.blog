@@ -9,6 +9,7 @@ The home page opens on a single micrograph shown as a circular "field of view", 
 ```
 config.json   Micro.blog site config, plus this theme's settings (see below)
 layouts/      Hugo templates (home, posts, pages, archive, notes, photos, feeds)
+content/      Source copy for pages that live in Micro.blog (cv.md); paste into the page, not read by the theme
 dev/          Sample content and a config generator for local previews
 scripts/      dev.sh: build or serve the theme locally
 ```
