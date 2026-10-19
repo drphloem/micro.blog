@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{ if eq .Type "post" }}
+<article class="h-entry">
+    <header class="page-head">
+        <p class="post-meta">
+            <a href="{{ .Permalink }}" class="u-url"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2 January 2006" }}</time></a>
+            {{- range .Params.categories }} <a class="entry-cat p-category" href="{{ printf "categories/%s/" (. | urlize) | relURL }}">{{ . }}</a>{{ end }}
+        </p>
+        {{- if .Title }}<h1 class="p-name">{{ .Title }}</h1>{{ end }}
+    </header>
+    <div class="prose e-content">
+        {{ .Content }}
+    </div>
+    {{ partial "microblog_syndication.html" . }}
+</article>
+{{ else }}
+<article>
+    <header class="page-head">
+        <h1>{{ .Title }}</h1>
+    </header>
+    <div class="prose">
+        {{ .Content }}
+    </div>
+</article>
+{{ end }}
+{{ end }}

@@ -1,0 +1,8 @@
+{{- /* One compact line in the Notes list. Context: a post page. */ -}}
+<li class="note h-entry">
+    <a href="{{ .Permalink }}" class="u-url note-date"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</time></a>
+    <span class="note-text p-summary">
+        {{- if .Title }}<strong class="p-name">{{ .Title }}</strong> {{ end -}}
+        {{- .Summary | plainify | htmlUnescape | truncate 140 -}}
+    </span>
+</li>

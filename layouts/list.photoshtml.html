@@ -1,0 +1,19 @@
+{{ define "main" }}
+<header class="page-head">
+    <h1>Photos</h1>
+</header>
+
+{{- $list := where .Site.RegularPages "Params.photos" "!=" nil }}
+<ul class="photo-grid">
+    {{- range $list }}
+    {{- $post := . }}
+    <li>
+        <a href="{{ .Permalink }}">
+            {{- range first 1 .Params.photos }}
+            <img src="{{ . }}" alt="{{ if $post.Title }}{{ $post.Title }}{{ else }}Photo from {{ $post.Date.Format "2 January 2006" }}{{ end }}" width="300" height="300" loading="lazy">
+            {{- end }}
+        </a>
+    </li>
+    {{- end }}
+</ul>
+{{ end }}

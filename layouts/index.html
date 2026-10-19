@@ -1,0 +1,57 @@
+{{ define "main" }}
+{{- $s := partial "split_posts.html" . -}}
+{{- $hero := .Site.Params.hero -}}
+
+<section class="hero" aria-labelledby="tagline">
+    <div class="hero-text">
+        <h1 id="tagline">{{ .Site.Params.tagline }}</h1>
+        <p class="intro">{{ .Site.Params.intro }}</p>
+    </div>
+
+    <figure class="plate">
+        <div class="plate-field">
+            <img src="{{ $hero.image }}" alt="{{ $hero.alt }}" fetchpriority="high">
+            {{- if and $hero.scale_label $hero.scale_percent }}
+            <div class="plate-scale" style="--p: {{ $hero.scale_percent }}"><i></i><span>{{ $hero.scale_label }}</span></div>
+            {{- end }}
+        </div>
+        {{- if or $hero.title $hero.detail }}
+        <figcaption>
+            {{- with $hero.title }}<span class="plate-title">{{ . | safeHTML }}</span>{{ end -}}
+            {{- with $hero.detail }}{{ . | safeHTML }}{{ end -}}
+        </figcaption>
+        {{- end }}
+    </figure>
+</section>
+
+{{ with .Site.Params.research_highlights }}
+<section class="section" aria-labelledby="research-h">
+    <h2 id="research-h">Current research</h2>
+    <ul class="highlights">
+        {{- range . }}
+        <li>
+            <a href="{{ .url | relURL }}">{{ .title }}</a>
+            <p>{{ .summary }}</p>
+        </li>
+        {{- end }}
+    </ul>
+</section>
+{{ end }}
+
+<section class="section h-feed" aria-labelledby="posts-h">
+    <h2 id="posts-h">Recent posts</h2>
+    {{- with first 6 $s.main }}
+    <ul class="entries">
+        {{- range . }}{{ partial "post_row.html" . }}{{ end }}
+    </ul>
+    <p class="section-more"><a href="{{ "archive/" | relURL }}">All posts</a></p>
+    {{- else }}
+    <p>No posts yet.</p>
+    {{- end }}
+    {{- if $s.notes }}
+    <p class="section-more">Older short posts are in <a href="{{ "notes/" | relURL }}">Notes</a>.</p>
+    {{- end }}
+</section>
+
+{{ partial "microblog_syndication.html" . }}
+{{ end }}

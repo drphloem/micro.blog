@@ -1,0 +1,11 @@
+{{- /*
+  Splits posts into the ones that belong on the main site (research, plants,
+  photos, academics) and the older short posts that live under Notes.
+  A post is "main" if it has at least one category listed in
+  params.main_categories in config.json. Everything else is a note.
+  Returns a dict with keys "main" and "notes".
+*/ -}}
+{{- $all := where .Site.RegularPages "Type" "post" -}}
+{{- $main := where $all "Params.categories" "intersect" .Site.Params.main_categories -}}
+{{- $notes := complement $main $all -}}
+{{- return (dict "main" $main "notes" $notes) -}}

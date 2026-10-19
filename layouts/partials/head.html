@@ -1,0 +1,37 @@
+{{- $hero := .Site.Params.hero -}}
+{{- $title := .Site.Title -}}
+{{- if not .IsHome -}}
+  {{- if .Title -}}
+    {{- $title = printf "%s | %s" .Title .Site.Title -}}
+  {{- else if eq .Type "post" -}}
+    {{- $title = printf "%s | %s" (.Summary | plainify | htmlUnescape | truncate 60) .Site.Title -}}
+  {{- end -}}
+{{- end -}}
+{{- $desc := .Site.Params.intro -}}
+{{- if not .IsHome -}}
+  {{- with (.Summary | plainify | htmlUnescape | truncate 180) -}}{{- $desc = . -}}{{- end -}}
+{{- end -}}
+{{- $image := $hero.image -}}
+{{- with .Params.photos -}}{{- $image = index . 0 -}}{{- end -}}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ $title }}</title>
+    <meta name="description" content="{{ $desc }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ $title }}{{ end }}">
+    <meta property="og:description" content="{{ $desc }}">
+    <meta property="og:type" content="{{ if eq .Type "post" }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{ with $image }}<meta property="og:image" content="{{ . }}">{{ end }}
+    <meta name="twitter:card" content="{{ if $image }}summary_large_image{{ else }}summary{{ end }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600&display=swap">
+    {{ partial "theme_css.html" . }}
+
+    {{ partial "microblog_head.html" . }}
+</head>

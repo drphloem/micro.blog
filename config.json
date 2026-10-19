@@ -1,0 +1,176 @@
+{
+    "title": "[TITLE]",
+    "author": {
+    	"name": "[FULL_NAME]",
+    	"avatar": "[AVATAR_URL]",
+    	"username": "[USERNAME]",
+		"activitypub": {
+			"username": "[ACTIVITYPUB_USERNAME]",
+			"url": "[ACTIVITYPUB_ACTOR]"
+		}
+    },
+    "baseURL": "[SCHEME]://[HOSTNAME]/",
+	"mediaTypes": {
+		"application/json": {
+			"suffixes": [ "json" ]
+		}
+	},
+	"outputFormats": {
+		"RSS": {
+			"baseName": "feed"
+		},
+		"JSON": {
+			"baseName": "feed"
+		},
+		"RSD": {
+			"mediaType": "application/xml",
+			"baseName": "rsd",
+			"isPlainText": true,
+			"notAlternative": true
+		},
+		"ArchiveHTML": {
+			"mediaType": "text/html",
+			"path": "archive",
+			"baseName": "index",
+			"isHTML": true,
+			"notAlternative": true
+		},
+		"ArchiveJSON": {
+			"mediaType": "application/json",
+			"path": "archive",
+			"baseName": "index",
+			"isPlainText": true,
+			"notAlternative": true
+		},
+		"NotesHTML": {
+			"mediaType": "text/html",
+			"path": "notes",
+			"baseName": "index",
+			"isHTML": true,
+			"notAlternative": true
+		},
+		"PhotosHTML": {
+			"mediaType": "text/html",
+			"path": "photos",
+			"baseName": "index",
+			"isHTML": true,
+			"notAlternative": true
+		},
+		"PhotosJSON": {
+			"mediaType": "application/json",
+			"path": "photos",
+			"baseName": "index",
+			"isPlainText": true,
+			"notAlternative": true
+		},
+		"PodcastXML": {
+			"mediaType": "application/rss+xml",
+			"baseName": "podcast",
+			"isPlainText": true,
+			"notAlternative": true
+		},
+		"PodcastJSON": {
+			"mediaType": "application/json",
+			"baseName": "podcast",
+			"isPlainText": true,
+			"notAlternative": true
+		}
+	},
+	"outputs": {
+		"home": [ "HTML", "RSS", "JSON", "RSD", "ArchiveHTML", "ArchiveJSON", "NotesHTML", "PhotosHTML", "PhotosJSON", "PodcastXML", "PodcastJSON" ],
+		"page": [ "HTML" ],
+		"section": [ "HTML" ],
+		"taxonomy": [ "HTML", "RSS", "JSON" ],
+		"term": [ "HTML", "RSS", "JSON" ]
+	},
+	"taxonomies": {
+		"category": "categories"
+	},
+	"rssLimit": 25,
+	"uglyURLs": false,
+	"blackfriday": {
+		"fractions": false
+	},
+	"markup": {
+		"goldmark": {
+			"renderer": {
+			  "unsafe": true
+			}
+		}
+	},
+	"enableRobotsTXT": true,
+	"languageCode": "[LANGUAGE]",
+	"defaultContentLanguage": "[LANGUAGE]",
+	"paginate": 25,
+	"pluralizeListTitles": false,
+	"params": {
+	    "author": {
+	    	"name": "[FULL_NAME]",
+	    	"avatar": "[AVATAR_URL]",
+	    	"username": "[USERNAME]",
+			"activitypub": {
+				"username": "[ACTIVITYPUB_USERNAME]",
+				"url": "[ACTIVITYPUB_ACTOR]"
+			}
+	    },
+		"description": "Follow <a href=\"https://micro.blog/[USERNAME]\">@[USERNAME] on Micro.blog</a>.",
+		"about_me": "[ITUNES_DESCRIPTION]",
+		"itunes_description": "[ITUNES_DESCRIPTION]",
+		"itunes_category": "[ITUNES_CATEGORY]",
+		"itunes_subcategory": "[ITUNES_SUBCATEGORY]",
+		"itunes_author": "[ITUNES_AUTHOR]",
+		"itunes_email": "[ITUNES_EMAIL]",
+		"itunes_cover": "[ITUNES_COVER]",
+		"twitter_username": "[TWITTER_USERNAME]",
+		"github_username": "[GITHUB_USERNAME]",
+		"instagram_username": "[INSTAGRAM_USERNAME]",
+		"site_id": "[SITE_ID]",
+		"paginate_home": false,
+		"paginate_categories": false,
+		"paginate_replies": false,
+		"theme_seconds": "0",
+		"plugins_css": [],
+		"plugins_js": [],
+		"plugins_html": [],
+		"feeds": {
+			"bookmarks_json": "[FEEDS_BOOKMARKS_JSON]"
+		},
+
+		"tagline": "The intersection of form and function",
+		"intro": "I'm a plant anatomist and physiologist. I pair classical anatomy with current physiological methods to ask how the structure of phloem, xylem and petioles shapes the way plants move carbon and water.",
+
+		"hero": {
+			"image": "https://www.dustinray.net/uploads/2021/1e65712696.jpg",
+			"alt": "Micrograph of plant tissue",
+			"title": "",
+			"detail": "",
+			"scale_label": "",
+			"scale_percent": 0
+		},
+
+		"research_highlights": [
+			{
+				"title": "Does drought season affect carbon transport in crop plants?",
+				"summary": "Comparing spring, summer and fall droughts in Prunus, Populus and Quercus, alongside work on Citrus phloem and citrus greening.",
+				"url": "/about/"
+			},
+			{
+				"title": "How do petioles limit or enhance the movement of water and sugar?",
+				"summary": "Vascular arrangement and packing in petioles, and what they mean for leaf physiology.",
+				"url": "/about/"
+			}
+		],
+
+		"notes_intro": "Short posts, mostly from 2017 to 2019. Research and photo posts are in Posts.",
+
+		"main_categories": [ "Academics", "Photos", "Plants", "Research", "academics", "photos", "plants", "research" ],
+
+		"nav": [
+			{ "title": "Research", "url": "/about/" },
+			{ "title": "CV", "url": "/cv/" },
+			{ "title": "Posts", "url": "/archive/" },
+			{ "title": "Photos", "url": "/photos/" },
+			{ "title": "Notes", "url": "/notes/" }
+		]
+	}
+}

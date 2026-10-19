@@ -1,0 +1,19 @@
+{{- /* One entry in a post list. Context: a post page. */ -}}
+<li class="entry h-entry">
+    <div class="entry-text">
+        <p class="entry-meta">
+            <a href="{{ .Permalink }}" class="u-url"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2 Jan 2006" }}</time></a>
+            {{- with .Params.categories }}
+                {{- range . }} <span class="entry-cat p-category">{{ . }}</span>{{ end }}
+            {{- end }}
+        </p>
+        {{- if .Title }}
+        <p class="entry-title p-name"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+        {{- else }}
+        <p class="entry-summary p-summary"><a href="{{ .Permalink }}">{{ .Summary | plainify | htmlUnescape | truncate 150 }}</a></p>
+        {{- end }}
+    </div>
+    {{- with .Params.photos }}
+    <a class="entry-thumb" href="{{ $.Permalink }}" tabindex="-1" aria-hidden="true"><img src="{{ index . 0 }}" alt="" width="120" height="120" loading="lazy"></a>
+    {{- end }}
+</li>

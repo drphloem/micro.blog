@@ -1,0 +1,24 @@
+{{ define "main" }}
+<header class="page-head">
+    <h1>{{ .Title }}</h1>
+</header>
+
+{{ if eq .Kind "taxonomy" }}
+<ul class="entries">
+    {{- range .Data.Terms.Alphabetical }}
+    <li class="entry"><p class="entry-title"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span class="entry-meta">{{ .Count }}</span></p></li>
+    {{- end }}
+</ul>
+{{ else }}
+{{- $p := .Paginate .Pages }}
+<ul class="entries h-feed">
+    {{- range $p.Pages }}{{ partial "post_row.html" . }}{{ end }}
+</ul>
+{{- if gt $p.TotalPages 1 }}
+<nav class="pager" aria-label="Pages">
+    {{- if $p.HasPrev }}<a href="{{ $p.Prev.URL }}" rel="prev">Newer</a>{{ else }}<span></span>{{ end }}
+    {{- if $p.HasNext }}<a href="{{ $p.Next.URL }}" rel="next">Older</a>{{ end }}
+</nav>
+{{- end }}
+{{ end }}
+{{ end }}

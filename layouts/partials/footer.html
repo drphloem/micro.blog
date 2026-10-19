@@ -1,0 +1,10 @@
+<footer class="site-footer wrap">
+    <div class="footer-in">
+        <p>&copy; {{ now.Year }} {{ .Site.Params.author.name }}</p>
+        <p class="footer-links">
+            <a href="{{ "feed.xml" | relURL }}">RSS</a>
+            <a href="{{ "feed.json" | relURL }}">JSON Feed</a>
+            {{ with .Site.Params.description }}<span>{{ . | safeHTML }}</span>{{ end }}
+        </p>
+    </div>
+</footer>
