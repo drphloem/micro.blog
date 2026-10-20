@@ -42,7 +42,7 @@
         {{- range $i, $p := . }}
         <li id="pub-{{ add $i 1 }}">
             <span class="pub-year">{{ .year }}</span>
-            <div>
+            <div class="pub-body">
                 {{ range $g := .goals }}<span class="rq-badge" role="img" aria-label="Research question {{ $g }}">{{ $g }}</span>{{ end }}
                 {{ if .url }}<a class="pub-title" href="{{ .url }}">{{ .title }}</a>{{ else }}<span class="pub-title">{{ .title }}</span>{{ end }}
                 <p class="pub-cite">{{ .citation | safeHTML }}</p>

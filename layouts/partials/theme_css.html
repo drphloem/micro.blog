@@ -306,23 +306,31 @@ a:hover { color: var(--safranin); }
   list-style: none;
 }
 .pubs li {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) 2.5rem;
+  align-items: start;
   gap: 0.375rem 2rem;
   padding-block: 1.25rem;
   border-bottom: 1px solid var(--rule);
 }
-.pubs li > div { flex: 1 1 30rem; min-width: 0; }
 .pub-year {
-  flex: 0 0 4rem;
+  padding-top: 0.2rem;
   color: var(--muted);
   font: 600 0.875rem/1.4 var(--sans);
   font-variant-numeric: tabular-nums;
 }
+.pub-body { min-width: 0; }
+@media (max-width: 36rem) {
+  .pubs li { grid-template-columns: minmax(0, 1fr) 2.5rem; }
+  .pub-year { grid-column: 1; }
+  .pub-body { grid-column: 1 / -1; grid-row: 2; }
+  .pub-altmetric { grid-column: 2; grid-row: 1; }
+}
 .pub-title { display: block; font-size: 1.25rem; line-height: 1.35; }
 .pubs a.pub-title { display: inline; }
-.pub-altmetric { flex: none; margin-left: auto; }
+/* Altmetric badge: small donut in the right-hand column */
+.pub-altmetric { grid-column: 3; justify-self: end; width: 2.5rem; height: 2.5rem; }
+.pub-altmetric a, .pub-altmetric img { display: block; width: 2.5rem !important; height: 2.5rem !important; }
 .pub-cite {
   margin: 0.25rem 0 0;
   color: var(--muted);
