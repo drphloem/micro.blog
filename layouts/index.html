@@ -47,12 +47,19 @@
                 {{ if .url }}<a class="pub-title" href="{{ .url }}">{{ .title }}</a>{{ else }}<span class="pub-title">{{ .title }}</span>{{ end }}
                 <p class="pub-cite">{{ .citation | safeHTML }}</p>
             </div>
+            {{- if and $.Site.Params.altmetric (hasPrefix (.url | default "") "https://doi.org/") }}
+            <div class="pub-altmetric altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true" data-doi="{{ strings.TrimPrefix "https://doi.org/" .url }}"></div>
+            {{- end }}
         </li>
         {{- end }}
     </ul>
     <p class="section-more">Posts are on <a href="{{ "archive/" | relURL }}">Micro.blog</a>{{ if $s.notes }}; older short posts are in <a href="{{ "notes/" | relURL }}">Notes</a>{{ end }}.</p>
 </section>
 {{ end }}
+
+{{- if .Site.Params.altmetric }}
+<script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+{{- end }}
 
 {{ partial "microblog_syndication.html" . }}
 {{ end }}

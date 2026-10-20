@@ -27,6 +27,7 @@ Edit these under `params` in `config.json`.
 | `tagline`, `intro` | Heading and paragraph beside the petiole diagram |
 | `intro_questions` | The numbered questions at the end of the intro. Each links to the first publication whose `goals` contains its `id`. |
 | `intro_note` | Smaller line under the intro. Leave empty to hide it. |
+| `altmetric` | `true` shows an Altmetric badge on each publication with a DOI link (loads a script from altmetric.com). Badges stay hidden until a paper has mentions. `false` turns it off. |
 | `publications` | "Selected publications" on the home page: `year`, `title`, `citation` (HTML allowed), `url` (may be empty), `goals` (list of question ids, e.g. `["2"]`, shown as numbered badges) |
 | `main_categories` | Categories that count as main posts (see below) |
 | `notes_intro` | Sentence under the Notes heading |
