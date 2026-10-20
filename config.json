@@ -189,7 +189,7 @@
 		"nav": [
 			{ "title": "About", "url": "/about/" },
 			{ "title": "CV", "url": "/cv/" },
-			{ "title": "Writing", "url": "/archive/" }
+			{ "title": "Micro.blog", "url": "/archive/" }
 		]
 	}
 }
