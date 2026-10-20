@@ -27,9 +27,11 @@
   --measure: 38rem;
 }
 
-/* Dark: near-black green ground, fluorescent-green phloem */
+/* Dark: near-black green ground, fluorescent-green phloem.
+   Follows the device unless the visitor has chosen with the header button
+   (html[data-theme]). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --slide: #111716;
     --ink: #E6EBE8;
     --muted: #9AA8A4;
@@ -46,10 +48,28 @@
     --pt-phloem: #39FF7A;
   }
 }
+:root[data-theme="dark"] {
+  --slide: #111716;
+  --ink: #E6EBE8;
+  --muted: #9AA8A4;
+  --rule: #2A3431;
+  --safranin: #5BE38A;
+  --fastgreen: #5BE38A;
+  --code-bg: #1A2220;
+
+  --pt-epidermis: #1F2B28;
+  --pt-outline: #4A5C57;
+  --pt-ground: #161E1C;
+  --pt-pith: #26322F;
+  --pt-xylem: #4A5A55;
+  --pt-phloem: #39FF7A;
+}
 
 *, *::before, *::after { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; color-scheme: light dark; }
+html[data-theme="light"] { color-scheme: light; }
+html[data-theme="dark"] { color-scheme: dark; }
 
 body {
   margin: 0;
@@ -114,6 +134,30 @@ a:hover { color: var(--safranin); }
   text-decoration: none;
 }
 .site-title:hover { color: var(--ink); }
+
+.header-end { display: flex; align-items: center; gap: 1.25rem; }
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-toggle[hidden] { display: none; }
+.theme-toggle:hover { color: var(--ink); border-color: var(--muted); }
+.theme-toggle svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .i-sun { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .i-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .i-moon { display: none; }
+}
+:root[data-theme="dark"] .theme-toggle .i-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .i-moon { display: none; }
 
 .site-nav {
   display: flex;
@@ -205,10 +249,13 @@ a:hover { color: var(--safranin); }
 .cap-xylem { color: var(--pt-xylem); font-weight: 600; }
 .cap-dark { display: none; }
 @media (prefers-color-scheme: dark) {
-  .cap-xylem { color: var(--ink); }
-  .cap-light { display: none; }
-  .cap-dark { display: inline; }
+  :root:not([data-theme="light"]) .cap-xylem { color: var(--ink); }
+  :root:not([data-theme="light"]) .cap-light { display: none; }
+  :root:not([data-theme="light"]) .cap-dark { display: inline; }
 }
+:root[data-theme="dark"] .cap-xylem { color: var(--ink); }
+:root[data-theme="dark"] .cap-light { display: none; }
+:root[data-theme="dark"] .cap-dark { display: inline; }
 
 /* ---------------- Sections ---------------- */
 .section {
