@@ -137,50 +137,45 @@
 		},
 
 		"tagline": "The intersection of form and function",
-		"intro": "I am a plant anatomist and physiologist, studying how the structure of phloem, xylem and petioles shapes the way plants move carbon and water. I am particularly interested in two research questions, both of which I am actively pursuing. First, are there limits on phloem structure and function in petioles? Second, how does seasonality affect phloem structure and function?",
-		"intro_note": "Currently, I work in environmental compliance and permitting.",
-
-		"research_heading": "Research, 2019–2025",
-		"research_highlights": [
-			{
-				"title": "Does drought season affect carbon transport in crop plants?",
-				"summary": "Comparing spring, summer and fall droughts in <i>Prunus</i>, <i>Populus</i> and <i>Quercus</i>, alongside work on <i>Citrus</i> phloem and citrus greening.",
-				"url": "/about/"
-			},
-			{
-				"title": "How do petioles limit or enhance the movement of water and sugar?",
-				"summary": "Vascular arrangement and packing in petioles, and what they mean for leaf physiology.",
-				"url": "/about/"
-			}
+		"intro": "I am a plant anatomist and physiologist, studying how the structure of phloem, xylem and petioles shapes the way plants move carbon and water. I am particularly interested in two research questions, both of which I am actively pursuing.",
+		"intro_questions": [
+			{ "id": "1", "lead": "First,", "text": "are there limits on phloem structure and function in petioles?" },
+			{ "id": "2", "lead": "Second,", "text": "how does seasonality affect phloem structure and function?" }
 		],
+		"intro_note": "Currently, I work in environmental compliance and permitting. I am also teaching at the College of St. Scholastica in Duluth, Minnesota: Plant Systematics (Fall 2026) and Life's History (Spring 2027).",
 
 		"publications": [
 			{
 				"year": "2026",
+				"goals": [],
 				"title": "Immunolabeling sieve element cell walls with the LM26 antibody",
 				"citation": "<b>Ray, D.M.</b> and J.M. Losada. In <i>Phloem: Methods and Protocols</i>, 31–38",
 				"url": ""
 			},
 			{
 				"year": "2025",
+				"goals": ["2"],
 				"title": "Cambial and phloem reactivation timing in relation to floral phenology in four co-occurring woody species",
 				"citation": "<b>Ray, D.M.</b>, A.C. Arthur, J. Baerg, E.W. McKeever and J.A. Savage. <i>Tree Physiology</i> 45(8): tpaf088",
 				"url": "https://doi.org/10.1093/treephys/tpaf088"
 			},
 			{
 				"year": "2021",
+				"goals": ["2"],
 				"title": "Seasonal changes in temperate woody plant phloem anatomy and physiology: implications for long-distance transport",
 				"citation": "<b>Ray, D.M.</b> and J.A. Savage. <i>AoB PLANTS</i> 13(4): plab028",
 				"url": "https://doi.org/10.1093/aobpla/plab028"
 			},
 			{
 				"year": "2020",
+				"goals": [],
 				"title": "Immunodetection of cell wall pectin galactan opens up new avenues for phloem research",
 				"citation": "<b>Ray, D.M.</b> and J.A. Savage. <i>Plant Physiology</i> 183(4): 1435–1437",
 				"url": "https://doi.org/10.1104/pp.20.00283"
 			},
 			{
 				"year": "2018",
+				"goals": ["1"],
 				"title": "Scaling relationships and vessel packing in petioles",
 				"citation": "<b>Ray, D.M.</b> and C.S. Jones. <i>American Journal of Botany</i> 105(4): 667–676",
 				"url": "https://doi.org/10.1002/ajb2.1054"

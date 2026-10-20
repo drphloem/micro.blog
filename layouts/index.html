@@ -4,7 +4,15 @@
 <section class="hero" aria-labelledby="tagline">
     <div class="hero-text">
         <h1 id="tagline">{{ .Site.Params.tagline }}</h1>
-        <p class="intro">{{ .Site.Params.intro }}</p>
+        <p class="intro">{{ .Site.Params.intro }}
+            {{- $pubs := .Site.Params.publications -}}
+            {{- range .Site.Params.intro_questions }}
+            {{- $q := . -}}
+            {{- $target := "" -}}
+            {{- range $i, $p := $pubs }}{{ if and (eq $target "") (in $p.goals $q.id) }}{{ $target = printf "pub-%d" (add $i 1) }}{{ end }}{{ end }}
+            {{ $q.lead }} {{ if $target }}<a class="rq-link" href="#{{ $target }}">{{ end }}<span class="rq-badge" aria-hidden="true">{{ $q.id }}</span>{{ $q.text }}{{ if $target }}</a>{{ end }}
+            {{- end -}}
+        </p>
         {{- with .Site.Params.intro_note }}
         <p class="intro-note">{{ . }}</p>
         {{- end }}
@@ -24,23 +32,6 @@
     </figure>
 </section>
 
-{{ with .Site.Params.research_highlights }}
-<section class="section" aria-labelledby="research-h">
-    <div class="section-head">
-        <h2 id="research-h">{{ $.Site.Params.research_heading | default "Research" }}</h2>
-        <a href="{{ "about/" | relURL }}">About the research</a>
-    </div>
-    <ul class="highlights">
-        {{- range . }}
-        <li>
-            <a href="{{ .url | relURL }}">{{ .title }}</a>
-            <p>{{ .summary | safeHTML }}</p>
-        </li>
-        {{- end }}
-    </ul>
-</section>
-{{ end }}
-
 {{ with .Site.Params.publications }}
 <section class="section" aria-labelledby="pubs-h">
     <div class="section-head">
@@ -48,10 +39,11 @@
         <a href="{{ "cv/" | relURL }}">Full list on CV</a>
     </div>
     <ul class="pubs">
-        {{- range . }}
-        <li>
+        {{- range $i, $p := . }}
+        <li id="pub-{{ add $i 1 }}">
             <span class="pub-year">{{ .year }}</span>
             <div>
+                {{ range $g := .goals }}<span class="rq-badge" role="img" aria-label="Research question {{ $g }}">{{ $g }}</span>{{ end }}
                 {{ if .url }}<a class="pub-title" href="{{ .url }}">{{ .title }}</a>{{ else }}<span class="pub-title">{{ .title }}</span>{{ end }}
                 <p class="pub-cite">{{ .citation | safeHTML }}</p>
             </div>

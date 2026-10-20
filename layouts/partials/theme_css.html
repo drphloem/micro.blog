@@ -283,25 +283,22 @@ a:hover { color: var(--safranin); }
   font: 400 0.95rem/1.5 var(--sans);
 }
 
-.highlights {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18.75rem), 1fr));
-  gap: 2.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+/* research questions: numbered in the intro and on the publications that answer them */
+.rq-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 1.45em;
+  height: 1.45em;
+  margin-right: 0.4em;
+  border-radius: 50%;
+  background: var(--safranin);
+  color: var(--slide);
+  font: 600 0.7em/1 var(--sans);
+  vertical-align: 0.12em;
+  text-decoration: none;
 }
-.highlights a {
-  font-size: 1.375rem;
-  font-weight: 500;
-  line-height: 1.3;
-}
-.highlights p {
-  margin: 0.5rem 0 0;
-  color: var(--muted);
-  font-size: 1.0625rem;
-  line-height: 1.5;
-}
+.pubs li { scroll-margin-top: 1.5rem; }
+.pubs li:target { background: color-mix(in srgb, var(--safranin) 10%, transparent); }
 
 .pubs {
   margin: 0;

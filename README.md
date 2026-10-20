@@ -25,10 +25,9 @@ Edit these under `params` in `config.json`.
 | Setting | What it does |
 | --- | --- |
 | `tagline`, `intro` | Heading and paragraph beside the petiole diagram |
+| `intro_questions` | The numbered questions at the end of the intro. Each links to the first publication whose `goals` contains its `id`. |
 | `intro_note` | Smaller line under the intro. Leave empty to hide it. |
-| `research_heading` | Heading for `research_highlights` |
-| `research_highlights` | Research items on the home page. `summary` allows HTML. |
-| `publications` | "Selected publications" on the home page: `year`, `title`, `citation` (HTML allowed), `url` (may be empty) |
+| `publications` | "Selected publications" on the home page: `year`, `title`, `citation` (HTML allowed), `url` (may be empty), `goals` (list of question ids, e.g. `["2"]`, shown as numbered badges) |
 | `main_categories` | Categories that count as main posts (see below) |
 | `notes_intro` | Sentence under the Notes heading |
 | `nav` | Header navigation |
@@ -58,7 +57,7 @@ After importing, check:
 
 1. `config.json` kept Micro.blog's `[PLACEHOLDER]` values; Micro.blog fills those in when it builds the site.
 2. The Archive, Photos and Notes pages load (`/archive/`, `/photos/`, `/notes/`).
-3. The About and CV pages still appear at `/about/` and `/cv/`. If you move them, update `nav` and `research_highlights`.
+3. The About and CV pages still appear at `/about/` and `/cv/`. If you move them, update `nav`.
 
 ## Fonts
 
