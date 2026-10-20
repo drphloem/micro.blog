@@ -73,6 +73,10 @@ E. McKeever, **D. Ray** and J. Savage. 2026. Plant growth and vascular structure
 
 Instructor of record in bold.
 
+*College of St. Scholastica, Duluth, MN*
+
+- **Plant Systematics**, Fall 2026
+
 *University of Minnesota Duluth*
 
 - **Biomechanics of Biological Organisms**, Fall 2022
