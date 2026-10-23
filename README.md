@@ -29,6 +29,7 @@ Edit these under `params` in `config.json`.
 | `intro_note` | Smaller line under the intro. Leave empty to hide it. |
 | `altmetric` | `true` shows an Altmetric badge on each publication with a DOI link (loads a script from altmetric.com). Badges stay hidden until a paper has mentions. `false` turns it off. |
 | `publications` | "Selected publications" on the home page: `year`, `title`, `citation` (HTML allowed), `url` (may be empty), `goals` (list of question ids, e.g. `["2"]`, shown as numbered badges) |
+| `profile_links` | Footer links such as ORCID or Google Scholar, as `{ "title": "ORCID", "url": "https://orcid.org/..." }`. Email works as `mailto:you@example.com`. |
 | `main_categories` | Categories that count as main posts (see below) |
 | `notes_intro` | Sentence under the Notes heading |
 | `nav` | Header navigation |

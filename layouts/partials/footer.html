@@ -2,6 +2,9 @@
     <div class="footer-in">
         <p>&copy; {{ now.Year }} {{ .Site.Params.author.name }}</p>
         <p class="footer-links">
+            {{- range .Site.Params.profile_links }}
+            <a href="{{ .url }}" rel="me">{{ .title }}</a>
+            {{- end }}
             <a href="{{ "feed.xml" | relURL }}">RSS</a>
             <a href="{{ "feed.json" | relURL }}">JSON Feed</a>
             {{ with .Site.Params.description }}<span>{{ . | safeHTML }}</span>{{ end }}
