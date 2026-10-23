@@ -11,7 +11,9 @@
   {{- with (.Summary | plainify | htmlUnescape | truncate 180) -}}{{- $desc = . -}}{{- end -}}
 {{- end -}}
 {{- $image := "" -}}
-{{- with .Params.photos -}}{{- $image = index . 0 -}}{{- end -}}
+{{- with .Site.Params.share_image -}}{{- $image = . | absURL -}}{{- end -}}
+{{- $photo := false -}}
+{{- with .Params.photos -}}{{- $image = index . 0 -}}{{- $photo = true -}}{{- end -}}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +27,7 @@
     <meta property="og:type" content="{{ if eq .Type "post" }}article{{ else }}website{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
     {{ with $image }}<meta property="og:image" content="{{ . }}">{{ end }}
-    <meta name="twitter:card" content="{{ if $image }}summary_large_image{{ else }}summary{{ end }}">
+    <meta name="twitter:card" content="{{ if $photo }}summary_large_image{{ else }}summary{{ end }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

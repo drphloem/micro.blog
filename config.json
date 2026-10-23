@@ -189,7 +189,9 @@
 			{ "title": "Google Scholar", "url": "https://scholar.google.com/citations?user=hxok7CIAAAAJ&hl=en" }
 		],
 
-		"notes_intro": "Short posts, mostly from 2017 to 2019. Research and photo posts are in Posts.",
+		"share_image": "/img/share.jpg",
+
+		"notes_intro": "Short posts, mostly from 2017 to 2019. Research and photo posts are on the <a href=\"/archive/\">Micro.blog</a> page.",
 
 		"main_categories": [ "Academics", "Photos", "Plants", "Research", "academics", "photos", "plants", "research" ],
 

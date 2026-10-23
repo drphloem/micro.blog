@@ -2,7 +2,7 @@
 {{- $s := partial "split_posts.html" . -}}
 <header class="page-head">
     <h1>Notes</h1>
-    {{- with .Site.Params.notes_intro }}<p class="page-intro">{{ . }}</p>{{ end }}
+    {{- with .Site.Params.notes_intro }}<p class="page-intro">{{ . | safeHTML }}</p>{{ end }}
 </header>
 
 {{ range $s.notes.GroupByDate "2006" }}
